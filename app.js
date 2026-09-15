@@ -1,6 +1,6 @@
 // SCREENS
-import Splash from "./src/screens/Splash";
+import Login from "./src/screens/Login";
 
 export default function App() {
-  return <Splash />;
+  return <Login />;
 }
