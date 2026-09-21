@@ -1,10 +1,23 @@
 //  REACT NATIVE IMPORTS
 import { Image, View } from "react-native";
 
+// HOOKS
+import { useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
+
 // STYLES
 import styles from "./style";
 
 export default function Splash() {
+  const navigation = useNavigation();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace("Login");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <View style={styles.container}>
       {/* Faixa superior */}

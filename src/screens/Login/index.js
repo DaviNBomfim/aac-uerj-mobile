@@ -1,4 +1,5 @@
 // HOOKS
+import { useNavigation } from "@react-navigation/native";
 import { useRef, useState } from "react";
 
 // CONSTANTES
@@ -32,6 +33,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const passwordInputRef = useRef(null);
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -82,14 +84,17 @@ export default function Login() {
             inputRef={passwordInputRef}
           />
 
-          <Pressable onPress={() => console.log("Ir para Esqueceu Senha")}>
+          <Pressable onPress={() => navigation.navigate("ForgotPassword")}>
             <Text style={styles.forgotPassword}>Esqueceu sua senha?</Text>
           </Pressable>
 
-          <CustomButton title="Entrar" onPress={() => console.log("Login")} />
+          <CustomButton
+            title="Entrar"
+            onPress={() => navigation.navigate("Home")}
+          />
 
           <View style={styles.registerContainer}>
-            <Pressable onPress={() => console.log("Ir para Cadastro")}>
+            <Pressable onPress={() => navigation.navigate("Register")}>
               <Text style={styles.registerLink}>Cadastre-se</Text>
             </Pressable>
           </View>
