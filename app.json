@@ -18,9 +18,9 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "output": "static"
+      "output": "single"
     },
-    "plugins": [],
+    "plugins": ["@react-native-community/datetimepicker"],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true

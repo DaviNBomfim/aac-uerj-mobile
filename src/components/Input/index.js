@@ -10,6 +10,9 @@ export default function CustomInput({
   icon,
   onIconPress,
   inputRef,
+  editable = true,
+  keyboardType = "default",
+  autoCapitalize = "none",
 }) {
   return (
     <View style={styles.container}>
@@ -24,6 +27,9 @@ export default function CustomInput({
           onChangeText={onChangeText}
           secureTextEntry={secureTextEntry}
           ref={inputRef}
+          editable={editable}
+          keyboardType={keyboardType}
+          autoCapitalize={autoCapitalize}
         />
         {icon && (
           <Pressable
